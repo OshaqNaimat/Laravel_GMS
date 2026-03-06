@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\SurveyController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,4 +17,6 @@ Route::get('/services',function() {
 Route::get('/contact',function() {
     return view('contact');
 });
+
+Route::POST('/add-survey',[SurveyController::class,'createSurvey']);
 

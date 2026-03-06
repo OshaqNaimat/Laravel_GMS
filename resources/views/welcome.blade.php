@@ -12,7 +12,7 @@
   <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
     <h2 class="text-2xl font-bold mb-6 text-center">Course Enrollment Form</h2>
     <form action="/add-survey" class="space-y-4" method="POST">
-
+       @csrf
       <!-- Name -->
       <div>
         <label for="name" class="block text-gray-700 font-medium mb-1">Name</label>
@@ -44,13 +44,13 @@
       <!-- Batch -->
       <div>
         <label for="batch" class="block text-gray-700 font-medium mb-1">Batch</label>
-        <input type="text" id="batch" name="batch" placeholder="Enter batch"
+        <input type="number" id="batch" name="batch" placeholder="Enter batch"
                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
       </div>
 
       <!-- Branch -->
       <div>
-        <label for="branch" class="block text-gray-700 font-medium mb-1">Branch</label>
+        <label  class="block text-gray-700 font-medium mb-1">Branch</label>
        <select  name="branch" type="text" id=""class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
 >
         <option disabled selected>Select Branch</option>
