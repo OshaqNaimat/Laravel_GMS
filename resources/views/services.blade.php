@@ -1,5 +1,5 @@
 <x-layout>
 
-    <x-navbar/>
-    <h1>this is services page</h1>
+
+    <h1>Have to show all the data</h1>
 </x-layout>
