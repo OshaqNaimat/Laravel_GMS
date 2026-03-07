@@ -20,3 +20,7 @@ Route::get('/contact',function() {
 
 Route::POST('/add-survey',[SurveyController::class,'createSurvey']);
 
+Route::get('/services',[SurveyController::class,'getData']  );
+Route::post('/delete/{id}',[SurveyController::class,'deleteData']);
+Route::post('/update-survey/{id}',[SurveyController::class,'updateData']);
+

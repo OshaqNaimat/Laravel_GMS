@@ -1,95 +1,37 @@
 <x-layout>
-
-     <style>
-
+<style>
 .sidebar::-webkit-scrollbar {
     display: none;
-}
-
-
-     </style>
+}</style>
 
 
 
-    <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-2 mx-3">
+    <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 mx-3">
 
-
-        <div class="container relative bg-gradient-to-r from-purple-500 to-indigo-600 p-4
-        rounded-xl text-white
+        @foreach ($allData as $item)
+ <div class="container relative bg-gradient-to-r from-purple-500 to-indigo-600 p-4
+        rounded-xl text-white overflow-hidden
         shadow-[0_10px_40px_rgba(139,92,246,0.6)] mx-auto my-3 ">
-        <h3 class="text-center text-4xl">Name</h3>
-        <h3 class="text-center text-4xl">email</h3>
-        <h3 class="text-center text-4xl">Instructor name</h3>
-        <h3 class="text-center text-4xl">course</h3>
-        <h3 class="text-center text-4xl">Batch</h3>
-        <h3 class="text-center text-4xl">Branch</h3>
-        <div class="absolute left-2 bottom-2 bg-red-500 p-2 rounded-md hover:scale-105 cursor-pointer transition ">
+        <h3 class="text-center text-4xl">{{$item['name']}}</h3>
+        <h3 class="text-center text-3xl">{{$item['email']}}</h3>
+        <h3 class="text-center text-3xl">{{$item['instructor']}}</h3>
+        <h3 class="text-center text-3xl">{{$item['course']}}</h3>
+        <h3 class="text-center text-3xl">{{$item['batch']}}</h3>
+        <h3 class="text-center text-3xl">{{$item['branch']}}</h3>
+          <form action="/delete/{{ $item['id'] }}" method="POST">
+            @csrf
+        <button class="absolute left-2 bottom-2 bg-red-500 p-2 rounded-md hover:scale-105 cursor-pointer transition ">
             <i class="bi bi-trash-fill "></i>
-        </div>
-        <div class="absolute right-2 bottom-2 bg-green-500 p-2 rounded-md hover:scale-105 cursor-pointer transition ">
-           <i class="bi bi-pencil-square underlay-open"></i>
-        </div>
+        </button>
+              </form>
+
+            <div class="absolute right-2 bottom-2 bg-green-500 p-2 rounded-md hover:scale-105 cursor-pointer transition ">
+                <i class="bi bi-pencil-square underlay-open"></i>
+            </div>
     </div>
-        <div class="container bg-gradient-to-r from-purple-500 to-indigo-600 p-4
-        rounded-xl text-white
-        shadow-[0_10px_40px_rgba(139,92,246,0.6)] mx-auto my-3 ">
-        <h3 class="text-center text-4xl">Name</h3>
-        <h3 class="text-center text-4xl">email</h3>
-        <h3 class="text-center text-4xl">Instructor name</h3>
-        <h3 class="text-center text-4xl">course</h3>
-        <h3 class="text-center text-4xl">Batch</h3>
-        <h3 class="text-center text-4xl">Branch</h3>
-    </div>
-        <div class="container bg-gradient-to-r from-purple-500 to-indigo-600 p-4
-        rounded-xl text-white
-        shadow-[0_10px_40px_rgba(139,92,246,0.6)] mx-auto my-3 ">
-        <h3 class="text-center text-4xl">Name</h3>
-        <h3 class="text-center text-4xl">email</h3>
-        <h3 class="text-center text-4xl">Instructor name</h3>
-        <h3 class="text-center text-4xl">course</h3>
-        <h3 class="text-center text-4xl">Batch</h3>
-        <h3 class="text-center text-4xl">Branch</h3>
-    </div>
-        <div class="container bg-gradient-to-r from-purple-500 to-indigo-600 p-4
-        rounded-xl text-white
-        shadow-[0_10px_40px_rgba(139,92,246,0.6)] mx-auto my-3 ">
-        <h3 class="text-center text-4xl">Name</h3>
-        <h3 class="text-center text-4xl">email</h3>
-        <h3 class="text-center text-4xl">Instructor name</h3>
-        <h3 class="text-center text-4xl">course</h3>
-        <h3 class="text-center text-4xl">Batch</h3>
-        <h3 class="text-center text-4xl">Branch</h3>
-    </div>
-        <div class="container bg-gradient-to-r from-purple-500 to-indigo-600 p-4
-        rounded-xl text-white
-        shadow-[0_10px_40px_rgba(139,92,246,0.6)] mx-auto my-3 ">
-        <h3 class="text-center text-4xl">Name</h3>
-        <h3 class="text-center text-4xl">email</h3>
-        <h3 class="text-center text-4xl">Instructor name</h3>
-        <h3 class="text-center text-4xl">course</h3>
-        <h3 class="text-center text-4xl">Batch</h3>
-        <h3 class="text-center text-4xl">Branch</h3>
-    </div>
-        <div class="container bg-gradient-to-r from-purple-500 to-indigo-600 p-4
-        rounded-xl text-white
-        shadow-[0_10px_40px_rgba(139,92,246,0.6)] mx-auto my-3 ">
-        <h3 class="text-center text-4xl">Name</h3>
-        <h3 class="text-center text-4xl">email</h3>
-        <h3 class="text-center text-4xl">Instructor name</h3>
-        <h3 class="text-center text-4xl">course</h3>
-        <h3 class="text-center text-4xl">Batch</h3>
-        <h3 class="text-center text-4xl">Branch</h3>
-    </div>
-        <div class="container bg-gradient-to-r from-purple-500 to-indigo-600 p-4
-        rounded-xl text-white
-        shadow-[0_10px_40px_rgba(139,92,246,0.6)] mx-auto my-3 ">
-        <h3 class="text-center text-4xl">Name</h3>
-        <h3 class="text-center text-4xl">email</h3>
-        <h3 class="text-center text-4xl">Instructor name</h3>
-        <h3 class="text-center text-4xl">course</h3>
-        <h3 class="text-center text-4xl">Batch</h3>
-        <h3 class="text-center text-4xl">Branch</h3>
-    </div>
+        @endforeach
+
+
 </div>
 <div class="fixed  inset-0 bg-black/50 hidden sidebh items-start justify-center pt-10 z-50">
     <div class="text-4xl text-white fixed right-5 z-50 cursor-pointer hover:scale-110 transition ">
@@ -98,7 +40,7 @@
     </div>
 <div class="bg-white p-8 rounded-lg shadow-lg w-full h-[90vh] sidebar overflow-y-scroll max-w-md">
     {{-- <h2 class="text-2xl font-bold mb-6 text-center">Course Enrollment Form</h2> --}}
-    <form action="/add-survey" class="space-y-4 " method="POST">
+    <form action="/update-survey/{{ $item['id'] }}" class="space-y-4 " method="POST">
        @csrf
       <!-- Name -->
       <div>
@@ -161,13 +103,15 @@
 
 <script>
 
-   let S_underlay = document.querySelector('.sidebh')
-let underlayOpen = document.querySelector('.underlay-open')
+  let S_underlay = document.querySelector('.sidebh')
+let underlayOpen = document.querySelectorAll('.underlay-open')
 let underlayClose = document.querySelector('.underlay-close')
 
-underlayOpen.addEventListener("click", () => {
-    S_underlay.classList.add("flex")
-    S_underlay.classList.remove("hidden")
+underlayOpen.forEach(btn => {
+    btn.addEventListener("click", () => {
+        S_underlay.classList.add("flex")
+        S_underlay.classList.remove("hidden")
+    })
 })
 
 underlayClose.addEventListener("click", () => {
