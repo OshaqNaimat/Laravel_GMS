@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('course');
             $table->string('instructor');
             $table->integer('batch');
+            $table->integer('branch ');
             $table->timestamps();
         });
     }
