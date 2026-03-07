@@ -18,6 +18,7 @@ class SurveyController extends Controller
        ];
 
        Survey::create($formfield);
+       return back();
     }
 
 

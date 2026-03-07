@@ -1,20 +1,17 @@
 <x-layout>
+
+     <style>
+
+.sidebh::-webkit-scrollbar {
+    display: none;
+}
+
+
+     </style>
+
+
+
     <div class="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-2 mx-3">
-
-
-
-       @foreach ($alldata as $item)
-
-       @endforeach
-
-
-
-
-
-
-
-
-
 
 
         <div class="container relative bg-gradient-to-r from-purple-500 to-indigo-600 p-4
@@ -93,5 +90,74 @@
         <h3 class="text-center text-4xl">Batch</h3>
         <h3 class="text-center text-4xl">Branch</h3>
     </div>
+</div>
+
+
+<div class="fixed inset-0 bg-black/50 flex items-start justify-center pt-10 z-50">
+    <div class="text-4xl text-white fixed right-5 z-50 cursor-pointer hover:scale-110 transition ">
+
+        <i class="bi bi-x "></i>
+    </div>
+<div class="bg-white p-8 rounded-lg shadow-lg w-full h-[90vh] sidebh overflow-y-scroll max-w-md">
+    {{-- <h2 class="text-2xl font-bold mb-6 text-center">Course Enrollment Form</h2> --}}
+    <form action="/add-survey" class="space-y-4 " method="POST">
+       @csrf
+      <!-- Name -->
+      <div>
+        <label for="name" class="block text-gray-700 font-medium mb-1">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name"
+               class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label for="email" class="block text-gray-700 font-medium mb-1">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email"
+               class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+
+      <!-- Course Name -->
+      <div>
+        <label for="course" class="block text-gray-700 font-medium mb-1">Course Name</label>
+        <input type="text" id="course" name="course" placeholder="Enter course name"
+               class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+
+      <!-- Instructor Name -->
+      <div>
+        <label for="instructor" class="block text-gray-700 font-medium mb-1">Instructor Name</label>
+        <input type="text" id="instructor" name="instructor" placeholder="Enter instructor name"
+               class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+
+      <!-- Batch -->
+      <div>
+        <label for="batch" class="block text-gray-700 font-medium mb-1">Batch</label>
+        <input type="number" id="batch" name="batch" placeholder="Enter batch"
+               class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+
+      <!-- Branch -->
+      <div>
+        <label  class="block text-gray-700 font-medium mb-1">Branch</label>
+       <select  name="branch" type="text" id=""class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+>
+        <option disabled selected>Select Branch</option>
+        <option value="RWP">RWP</option>
+        <option value="LHR">Lahore</option>
+        <option value="KPK">KPK </option>
+       </select>
+    </div>
+
+      <!-- Submit Button -->
+      <div>
+        <button  type="submit"
+                class="w-full bg-blue-500 text-white font-medium py-2 px-4 rounded-lg hover:bg-blue-600 transition">
+          update
+        </button>
+      </div>
+
+    </form>
+  </div>
 </div>
 </x-layout>
